@@ -10,12 +10,14 @@ package App;
  * @author peter.johnson
  */
 public class MainMenu extends javax.swing.JFrame {
+    
+     public static Budget bud1 = new Budget();
 
     /**
      * Creates new form MainMenu
      */
     public MainMenu() {
-        initComponents();
+        initComponents();      
     }
 
     /**
@@ -93,15 +95,19 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        BalanceMenu bm = new BalanceMenu();
+        BalanceMenu bm = new BalanceMenu(bud1);
+        //bm.bud.setSalary(this.bud1.getSalary());
+        
         bm.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        ChatMenu cm = new ChatMenu();
-        cm.setVisible(true);
+        ChatMenu cm = new ChatMenu(bud1);
+        //cm.bud.setSalary(this.bud1.getSalary());
+        
+        cm.setVisible(true); 
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
