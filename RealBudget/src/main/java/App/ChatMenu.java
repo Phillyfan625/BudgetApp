@@ -13,14 +13,20 @@ import javax.swing.JOptionPane;
  */
 public class ChatMenu extends javax.swing.JFrame {
     
-    Budget bud = new Budget();
+    public static Budget bud = new Budget();
 
     /**
      * Creates new form ChatMenu
      */
     
-    public ChatMenu() {
+    public ChatMenu(Budget b) {
         initComponents();
+        bud = b;
+        jTextField1.setText(String.valueOf(bud.getSalary()));
+       jTextField2.setText(String.valueOf(bud.getRent()));
+       jTextField3.setText(String.valueOf(bud.getFood()));
+       jTextField4.setText(String.valueOf(bud.getCreditCard()));
+       jTextField5.setText(String.valueOf(bud.getUtilities()));
     }
 
     /**
@@ -209,6 +215,7 @@ public class ChatMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         MainMenu mm = new MainMenu();
         mm.setVisible(true);
+        mm.bud1.setSalary(this.bud.getSalary());
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -242,7 +249,9 @@ public class ChatMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChatMenu().setVisible(true);
+                 ChatMenu cm = new ChatMenu(new Budget());
+                 cm.setVisible(true);
+                 
             }
         });
     }
