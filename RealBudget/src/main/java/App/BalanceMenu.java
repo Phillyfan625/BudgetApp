@@ -14,13 +14,21 @@ import static javax.swing.JOptionPane.showMessageDialog;
  */
 public class BalanceMenu extends javax.swing.JFrame {
     
-     Budget bud = new Budget();
+     public static Budget bud = new Budget();
 
     /**
      * Creates new form BalanceMenu
      */
-    public BalanceMenu() {
+    public BalanceMenu(Budget b) {
         initComponents();
+        bud = b;
+        jTextField1.setText(String.valueOf(bud.getSalary()));
+       jTextField2.setText(String.valueOf(bud.getRent()));
+       jTextField3.setText(String.valueOf(bud.getFood()));
+       jTextField4.setText(String.valueOf(bud.getCreditCard()));
+       jTextField5.setText(String.valueOf(bud.getUtilities()));
+       
+       
     }
 
     /**
@@ -172,9 +180,14 @@ public class BalanceMenu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         MainMenu mm = new MainMenu();
+        MainMenu mm = new MainMenu();
         mm.setVisible(true);
+       // mm.bud1.setSalary(this.bud.getSalary());
+        mm.bud1 = bud;
+        System.out.println(mm.bud1.getSalary());
         dispose();
+        
+        
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -209,7 +222,12 @@ public class BalanceMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BalanceMenu().setVisible(true);
+                
+                 BalanceMenu bm = new BalanceMenu(new Budget());
+                
+               
+                 bm.setVisible(true);
+                
             }
         });
     }
