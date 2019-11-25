@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package App;
+package View;
+import App.App;
+import Model.Budget;
 import java.awt.Frame;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;

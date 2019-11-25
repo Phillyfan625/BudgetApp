@@ -5,6 +5,8 @@
  */
 package App;
 
+import View.MainMenu;
+import Model.Budget;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

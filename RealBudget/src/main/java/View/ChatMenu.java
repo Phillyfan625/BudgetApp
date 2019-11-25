@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package App;
+package View;
 
+import App.App;
+import Model.Budget;
 import javax.swing.JOptionPane;
 
 /**
